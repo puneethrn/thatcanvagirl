@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>That Canva Girl — Jasmine Gathoga</title>
+<meta name="description" content="Jasmine Gathoga, That Canva Girl — LinkedIn brand strategist & designer. Strategy + design, together.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F8EEE8;
+    --blush:#F3DFD6;
+    --ink:#141210;
+    --orange:#F4510E;
+    --orange-soft:#F7A27E;
+    --amber:#F49B09;
+    --white:#FFFDFB;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .display{font-family:"Bricolage Grotesque",sans-serif;font-variation-settings:"wdth" 75;font-weight:800;text-transform:uppercase;line-height:.86;letter-spacing:-.015em}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+  .label{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;inset:0 0 auto 0;z-index:60;padding:18px 0;pointer-events:none}
+  nav{transition:background .3s,padding .3s}
+  nav.scrolled{background:rgba(248,238,232,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:10px 0;pointer-events:auto}
+  nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;max-width:none}
+  nav .wrap>*{pointer-events:auto}
+  .navl{display:flex;gap:8px}
+  .pill{background:var(--white);border-radius:999px;padding:11px 20px;font-weight:600;font-size:15px;transition:.2s;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .pill:hover{background:var(--ink);color:var(--white)}
+  .wordmark{font-family:"Bricolage Grotesque";font-variation-settings:"wdth" 75;font-weight:800;font-size:23px;color:var(--orange);letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
+  .navr{display:flex;justify-content:flex-end;align-items:center;gap:22px}
+  .hours{font-size:11px;font-weight:600;line-height:1.3;opacity:.8}
+  .talk{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--white);border-radius:999px;padding:5px 5px 5px 20px;font-weight:600;font-size:14px;white-space:nowrap;transition:.25s}
+  .talk i{width:34px;height:34px;border-radius:50%;background:var(--orange);display:grid;place-items:center;font-style:normal;transition:.25s}
+  nav .pill{padding:8px 16px;font-size:13.5px}
+  nav .talk{padding:4px 4px 4px 16px;font-size:13px;gap:10px}
+  nav .talk i{width:28px;height:28px;font-size:13px}
+  .talk:hover i{transform:rotate(45deg);background:var(--white);color:var(--orange)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:86vh;padding:96px 0 0;overflow:hidden;background:var(--blush)}
+  .loop{position:absolute;z-index:1;fill:none;stroke:var(--orange);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;overflow:visible}
+  .loop{top:36%;width:clamp(120px,12vw,180px)}
+  .loop.l1{left:0}
+  .loop.l2{right:0;transform:scaleX(-1)}
+
+  .hero-main{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 3vw}
+  .hero-block{--hs:clamp(56px,8.8vw,136px);display:flex;flex-direction:column}
+  .headline{text-align:center;color:var(--orange);font-size:var(--hs)}
+  .headline .line{display:block}
+  .headline .line>b{position:relative;display:inline-block;font-weight:inherit}
+  .tag{position:absolute;top:50%;z-index:3;display:inline-block;background:var(--ink);color:var(--white);font-family:"DM Sans";font-style:normal;font-weight:600;font-size:clamp(11px,.9vw,13.5px);text-transform:none;letter-spacing:0;padding:.55em 1.1em;border-radius:999px;white-space:nowrap;line-height:1.2}
+  /* each tag overlaps its line by less than one letter */
+  .tag.at-left{right:100%;margin-right:calc(var(--hs) * -.26);translate:0 -55%}
+  .tag.at-right{left:100%;margin-left:calc(var(--hs) * -.26);translate:0 -55%}
+  .tag.t1{rotate:-6deg}
+  .tag.t2{rotate:5deg}
+  .tag.t3{rotate:-4deg}
+  .hero-cta{display:flex;flex-direction:column-reverse;align-items:flex-end;gap:10px;margin-top:clamp(18px,3vh,32px)}
+  .hero-cta p{font-size:13px;line-height:1.35;color:var(--ink);text-align:right}
+  .hero-cta .talk{font-size:15px;padding:6px 6px 6px 22px}
+
+  .hero{display:flex;flex-direction:column;gap:0;padding-bottom:0}
+
+  /* curved ribbon marquee */
+  .ribbon{position:relative;z-index:4;overflow:hidden;margin:clamp(24px,5vh,60px) -2px 0}
+  .ribbon svg{display:block;width:max(100%,1100px);margin-left:50%;transform:translateX(-50%);overflow:visible}
+  .ribbon .band{fill:none;stroke:var(--orange);stroke-width:96;stroke-linecap:butt}
+  .ribbon-text{font-family:"Bricolage Grotesque",sans-serif;font-variation-settings:"wdth" 75;font-weight:800;font-size:50px;text-transform:uppercase;fill:var(--white);letter-spacing:.01em}
+
+  /* ---------- ABOUT (word reveal) ---------- */
+  /* bottom padding sized to the screen: with this section at the top of the window,
+     only the "Selected Work" headline shows, ~24px above the bottom edge; the reel stays below the fold */
+  .about{padding:150px 0 max(40px,calc(100vh - 740px));text-align:center}
+  .about .label{font-size:11.5px;margin-bottom:22px}
+  /* text sits in a narrow centre column right under the label; the two tags sit in the side gutters, clear of the text */
+  .about-body{position:relative;max-width:1180px;margin:0 auto}
+  .reveal{font-family:"Bricolage Grotesque";font-variation-settings:"wdth" 82;font-weight:700;font-size:clamp(32px,4.6vw,64px);line-height:1.06;letter-spacing:-.02em;max-width:min(760px,calc(100% - 440px));margin:0 auto}
+  .about-tag{position:absolute;display:inline-block;color:var(--white);font-weight:600;font-size:13px;padding:8px 15px;border-radius:999px;white-space:nowrap}
+  .about-tag.ta{top:12%;left:0;background:var(--orange);rotate:-6deg}
+  .about-tag.tb{bottom:12%;right:0;background:var(--ink);rotate:5deg}
+  .reveal .w{color:var(--orange-soft);transition:color .25s}
+  .reveal .w.on{color:var(--ink)}
+  .reveal .w.hot{color:var(--orange)}
+  /* stats band: full-width black band after the services section; the four stats sit as one
+     compact group in the centre (fixed-width columns), not spread across the width */
+  .stats-band{margin:0 0 40px;background:var(--ink);color:var(--white);padding:56px 0}
+  .stats{display:grid;grid-template-columns:repeat(4,minmax(0,220px));justify-content:center;column-gap:clamp(28px,4vw,64px)}
+  .stat{text-align:center}
+  .stat big{display:block;font-size:clamp(44px,5vw,76px);color:var(--orange)}
+  .stat p{font-size:14px;line-height:1.4;margin:8px auto 0;max-width:210px;text-wrap:balance;opacity:.85}
+
+  /* ---------- WORK ---------- */
+  .work{padding:40px 0 100px;scroll-margin-top:40px} /* clears the fixed header when jumped to */
+  .sec-title{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:50px}
+  .sec-title h2{font-size:clamp(56px,9vw,140px)}
+  .sec-title h2 em{font-style:normal;color:var(--orange)}
+  .sec-title p{max-width:340px;font-size:16px;line-height:1.5}
+  /* headline centred; label on its left and button on its right. Both sit on the headline's
+     baseline (0.106em above the bottom of its box), so they line up with the letters, not the box */
+  .work-head{--hs:clamp(46px,6.4vw,100px);display:grid;grid-template-columns:1fr auto 1fr;align-items:end;column-gap:clamp(48px,7vw,120px);margin-bottom:12px}
+  .work-head h2{grid-column:2;text-align:center;color:var(--ink);font-size:var(--hs)}
+  .work-head .label,.work-head .talk{grid-row:1;margin-bottom:calc(var(--hs) * .106)}
+  .work-head .label{grid-column:1;justify-self:end;font-size:11.5px;line-height:30px}
+  .work-head .talk{grid-column:3;justify-self:start;font-size:12.5px;padding:2px 2px 2px 14px;gap:8px}
+  .work-head .talk i{width:26px;height:26px;font-size:12px}
+
+  /* curved reel: one row of designs streams right-to-left round the inside of a cylinder.
+     Each tile is cut into vertical strips (flat facets of the cylinder); the tile turns
+     about the cylinder's axis to travel along the arc. Built by the script at the end. */
+  .reel{position:relative;overflow:hidden;container-type:size;height:clamp(380px,38vw,560px)}
+  .reel-band{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s}
+  .reel-band.ready{opacity:1}
+  /* transparent outline smooths the edges of 3D-turned strips (stops edge shimmer) */
+  .reel-strip{position:absolute;overflow:hidden;background:var(--blush);outline:1px solid transparent;backface-visibility:hidden}
+  .reel-strip.s-first{border-radius:14px 0 0 14px}
+  .reel-strip.s-last{border-radius:0 14px 14px 0}
+  .reel-strip img{position:absolute;top:0;max-width:none;object-fit:cover}
+
+  /* ---------- SERVICES PATH ---------- */
+  .services{padding:60px 0 70px;position:relative;overflow-x:hidden;overflow-x:clip} /* stop wide step boxes making the page scroll sideways */
+  .trail{position:relative;aspect-ratio:1200/1360;max-width:1200px;margin:0 auto}
+  .trail-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .trail .track{fill:none;stroke:var(--orange-soft);opacity:.4;stroke-width:9;stroke-linecap:round}
+  .trail .ink{fill:none;stroke:var(--orange);stroke-width:9;stroke-linecap:round}
+  .trail .start{fill:var(--orange);stroke:var(--ink);stroke-width:2.5}
+  .trail .head{fill:var(--white);stroke:var(--ink);stroke-width:2.5;transition:opacity .2s}
+  .svc{position:absolute;width:1000px;display:grid;grid-template-columns:1fr 110px 1fr;align-items:center;transform:translate(-50%,-50%)}
+  .svc h3{font-size:clamp(40px,4.6vw,66px);color:var(--orange);line-height:.9;white-space:nowrap}
+  .svc .l{text-align:right;padding-right:16px}
+  .svc .r{padding-left:16px}
+  .svc .icon{width:110px;height:110px;display:grid;place-items:center;position:relative;z-index:2}
+  .svc .icon svg{width:92px;height:92px;overflow:visible;fill:none;stroke:var(--ink);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;filter:grayscale(1);opacity:.28;transform:scale(.8);transition:transform .6s cubic-bezier(.3,1.7,.5,1),opacity .3s,filter .3s}
+  .svc .icon svg *{stroke:inherit}
+  .svc.on .icon svg{filter:none;opacity:1;transform:scale(1) rotate(-8deg)}
+  .svc .sp{opacity:0;transition:opacity .3s .25s}
+  .svc.on .sp{opacity:1;animation:twinkle 1.6s .4s ease-in-out infinite alternate}
+  @keyframes twinkle{to{opacity:.35}}
+  /* in-place wiggle once an illustration has popped on. Starts and ends each cycle at rest,
+     so it eases out of the pop instead of snapping to a tilted pose when it kicks in */
+  .svc.on .icon{animation:wiggle 4.4s .6s ease-in-out infinite}
+  @keyframes wiggle{
+    0%,100%{transform:none}
+    25%{transform:translateX(-3px) rotate(-5deg)}
+    75%{transform:translateX(3px) rotate(5deg)}
+  }
+  /* cards: compact, orange line kept to two lines, black line a touch bigger; all bold */
+  .svc .bubble{position:absolute;top:calc(50% + 46px);right:calc(50% + 8px);width:300px;background:var(--white);border:1.5px solid var(--orange);border-radius:16px;padding:10px 14px 9px;font-size:11.5px;font-weight:700;line-height:1.35;color:var(--orange);opacity:0;transform:rotate(-4deg) scale(.5);transform-origin:top right;transition:transform .55s cubic-bezier(.3,1.6,.5,1),opacity .3s}
+  .svc[data-bubble="right"] .bubble{right:auto;left:calc(50% + 8px);transform-origin:top left;transform:rotate(3deg) scale(.5)}
+  .svc.on .bubble{opacity:1;transform:rotate(-4deg) scale(1)}
+  .svc.on[data-bubble="right"] .bubble{transform:rotate(3deg) scale(1)}
+  .svc .bubble a{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+  .svc .bubble a:hover{color:var(--orange)}
+  .svc .bubble p{text-wrap:balance}
+  .svc .bubble .note{display:block;margin-top:5px;font-size:11.5px;font-weight:700;color:var(--ink)}
+  .svc-head{margin-bottom:36px}
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:110px 0 120px}
+  /* small label centred on top of the centred headline */
+  .faq-head{text-align:center;margin-bottom:48px}
+  .faq-head .label{font-size:11.5px;margin-bottom:12px}
+  .faq-head h2{font-size:clamp(46px,6.4vw,100px)}
+
+  /* accordion (vanilla port of the "interactive accordion" component, without numbers) */
+  /* black line above the first question too */
+  .acc{max-width:760px;margin:0 auto;border-top:1.5px solid var(--ink);--spring:cubic-bezier(.3,1.25,.45,1)}
+  .acc-q{position:relative;display:flex;align-items:center;gap:24px;width:100%;padding:18px 4px;background:none;border:0;cursor:pointer;text-align:left;font-family:inherit;color:inherit}
+  /* black divider under each whole item (question + answer), so an open answer sits
+     directly under its question with no line between them */
+  .acc-item{border-bottom:1.5px solid var(--ink)}
+  /* same face as The Short Version paragraph (Bricolage Grotesque, wdth 82, 700) */
+  .acc-t{font-family:"Bricolage Grotesque",sans-serif;font-variation-settings:"wdth" 82;font-size:21px;font-weight:700;letter-spacing:-.01em;color:var(--ink);transition:transform .45s var(--spring)}
+  .acc-q:hover .acc-t,.acc-item.open .acc-t{transform:translateX(4px)}
+  .acc-i{margin-left:auto;flex:none;width:32px;height:32px;display:grid;place-items:center;transition:transform .5s var(--spring)}
+  .acc-i svg{width:15px;height:15px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;transition:stroke .2s}
+  .acc-item.open .acc-i{transform:rotate(45deg)}
+  .acc-item.open .acc-i svg{stroke:var(--orange)}
+  /* answer appears instantly when its question is clicked (no slide) */
+  .acc-a{display:none}
+  .acc-item.open .acc-a{display:block}
+  .acc-a p{padding:4px 48px 22px 8px;font-size:15px;font-weight:400;line-height:1.55;color:var(--ink)}
+  .acc-a a{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .acc-a a:hover{color:var(--orange)}
+
+  /* ---------- ABOUT ME (photo on doodles + story) ---------- */
+  .me{padding:110px 0 100px}
+  .me-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:center}
+  .me-art{position:relative;width:100%;max-width:540px;aspect-ratio:600/640;justify-self:center}
+  .me-art svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .me-blob{fill:var(--blush)}
+  .me-ink-o{fill:none;stroke:var(--orange);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+  .me-ink{fill:none;stroke:var(--ink);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+  .me-dash{stroke-dasharray:2 12}
+  .me-fill-o{fill:var(--orange)}
+  .me-fill-k{fill:var(--ink)}
+  .me-art img{position:absolute;left:50%;top:50%;width:64%;height:auto;transform:translate(-50%,-50%) rotate(-3deg);border:6px solid var(--white);border-radius:22px;box-shadow:0 24px 50px rgba(80,20,0,.18)}
+  .me-tag{position:absolute;z-index:2;background:var(--ink);color:var(--white);font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 14px rgba(20,18,16,.15)}
+  .me-tag-l{left:6%;top:30%;rotate:-7deg}
+  .me-tag-r{right:8%;top:63%;rotate:6deg;background:var(--orange)}
+  .me-copy .label{font-size:11.5px;margin-bottom:14px}
+  .me-copy h2{font-size:clamp(38px,4.6vw,72px)}
+  .me-copy h2 em{font-style:normal;color:var(--orange)}
+  .me-copy p:not(.label){font-size:15px;line-height:1.6;max-width:470px;margin-top:18px}
+  .me-copy h2+p{margin-top:26px}
+
+  /* ---------- TESTIMONIALS (LinkedIn recommendations marquee) ---------- */
+  .recs{padding:100px 0 110px}
+  .recs-head{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:44px}
+  .recs-head .label{font-size:11.5px;margin-bottom:12px}
+  .recs-head h2{font-size:clamp(46px,6.4vw,100px)}
+  .recs-sub{max-width:340px;margin:18px auto 16px;font-size:13px;line-height:1.45;text-wrap:balance}
+  .recs-head .talk{font-size:12.5px;padding:2px 2px 2px 14px;gap:8px}
+  .recs-head .talk i{width:26px;height:26px;font-size:12px}
+  /* marquee: the set of cards is cloned once; both copies slide left by their own width + gap,
+     so the second copy lands exactly where the first began and the loop never jumps */
+  .marquee{--gap:16px;--duration:90s;position:relative;display:flex;gap:var(--gap);overflow:hidden;padding:6px 0 26px;
+    -webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%)}
+  .marquee-set{display:flex;gap:var(--gap);flex-shrink:0;animation:marquee var(--duration) linear infinite}
+  .marquee:hover .marquee-set{animation-play-state:paused}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(calc(-100% - var(--gap)))}}
+  /* soft fade into the page at both ends */
+  .marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:18%;z-index:2;pointer-events:none}
+  .marquee::before{left:0;background:linear-gradient(90deg,var(--cream),transparent)}
+  .marquee::after{right:0;background:linear-gradient(-90deg,var(--cream),transparent)}
+  .tcard{flex:none;width:260px;min-width:0;display:flex;flex-direction:column;background:var(--white);border:1.5px solid var(--ink);border-radius:18px;padding:18px 18px 16px;color:var(--ink);transition:border-color .2s,transform .2s}
+  .tcard:hover{border-color:var(--orange);transform:translateY(-3px)}
+  .tc-who{display:flex;align-items:center;gap:10px;margin-bottom:12px;min-width:0}
+  .tc-ini{width:38px;height:38px;flex:none;border-radius:50%;background:var(--orange);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:14px}
+  .tc-who>div{min-width:0}
+  .tc-who b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-variation-settings:"wdth" 82;font-size:15.5px;font-weight:700;line-height:1.15}
+  .tc-who small{display:block;font-size:11.5px;opacity:.65;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tcard p{font-size:14px;line-height:1.5}
+  /* reduced motion: no sliding; the row can be scrolled sideways instead */
+  @media (prefers-reduced-motion:reduce){.marquee{overflow-x:auto}}
+
+  /* ---------- FOOTER: full-width black ---------- */
+  footer{background:var(--ink);color:var(--white);padding:88px 0 30px}
+  .foot-h{font-size:clamp(56px,8.4vw,128px);line-height:.86}
+  .foot-h,.foot-cta{margin-left:clamp(0px,12vw,180px)}
+  .foot-h em{font-style:normal;color:var(--orange)}
+  /* two buttons side by side; Book a call is the main one */
+  .foot-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:34px}
+  .fbtn{display:inline-flex;align-items:center;border-radius:999px;font-weight:600;white-space:nowrap;transition:.25s}
+  .fbtn-main{gap:14px;background:var(--orange);color:var(--white);font-size:17px;font-weight:700;padding:7px 7px 7px 26px}
+  .fbtn-main i{width:42px;height:42px;border-radius:50%;background:var(--white);color:var(--orange);display:grid;place-items:center;font-style:normal;transition:.25s}
+  .fbtn-main:hover i{transform:rotate(45deg)}
+  .fbtn-alt{font-size:14.5px;padding:15px 22px;border:1.5px solid rgba(255,253,251,.4);color:var(--white)}
+  .fbtn-alt:hover{border-color:var(--white);background:rgba(255,253,251,.08)}
+  /* divider + three small detail columns */
+  .foot-band{margin-left:clamp(0px,12vw,180px);margin-right:clamp(0px,12vw,180px)}
+  .foot-info{display:grid;grid-template-columns:1fr auto 1fr;gap:40px;margin-top:104px;padding-top:30px;border-top:1px solid rgba(255,253,251,.22);font-size:14px;text-align:left}
+  .foot-info>div{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+  .foot-info>div:nth-child(2){justify-self:center}
+  .foot-info>div:nth-child(3){justify-self:end}
+  .foot-info h4{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:4px}
+  .foot-info a{text-decoration:none}
+  .foot-info a:hover{color:var(--orange)}
+  .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 40px;margin-top:60px;font-size:12.5px;opacity:.55}
+
+
+  /* ---------- RESPONSIVE ---------- */
+  .mburger,.mmenu,.trail-mline,.trail-msvg{display:none} /* phone-only menu + services trail */
+  @media (max-width:900px){
+    /* not enough side room: tags tuck under their line, still overlapping it */
+    .headline .line>b{display:block}
+    .tag.at-left,.tag.at-right{position:relative;top:auto;left:auto;right:auto;margin:-.5em auto .7em;translate:none;display:table;font-size:12px}
+    .hero-cta{align-items:center}
+    .hero-cta p{text-align:center}
+    /* no side room for the about tags: stack them above and below the text */
+    .about-body{display:flex;flex-direction:column;align-items:center;gap:18px}
+    .about-tag{position:static}
+    .me-grid{grid-template-columns:1fr}
+    /* no room beside the Selected Work headline: label above, button below, all centred */
+    .work-head{grid-template-columns:1fr;justify-items:center;row-gap:10px}
+    .work-head .label,.work-head h2,.work-head .talk{grid-column:1;grid-row:auto;justify-self:center}
+    .reveal{max-width:none}
+  }
+  @media (max-width:960px){
+    .hours{display:none}
+    .stats{grid-template-columns:repeat(2,minmax(0,220px));row-gap:28px}
+    .svc h3{font-size:clamp(32px,4.8vw,48px)}
+    .svc .bubble{width:270px}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 16px}
+    .navl{display:none}
+    nav .wrap{grid-template-columns:1fr auto}
+    .wordmark{font-size:19px}
+    .talk{padding:4px 4px 4px 14px;font-size:13px;gap:10px}
+    .talk i{width:30px;height:30px}
+    .hero{padding-top:100px}
+    .hero-block{--hs:15vw}
+    /* (hero tag size set in the mobile pass below) */
+    /* (swirl placement set in the mobile pass below) */
+    .hero{min-height:auto;padding-bottom:0}
+    .hero-main{padding-top:56px} /* more room between the header and the headline */
+    .hero-cta p{text-align:center;font-size:13px}
+    /* services: the desktop trail, redrawn for a phone (portrait path in .trail-msvg).
+       Steps keep the desktop design (word, icon, word + tilted card), just smaller,
+       and sit down the middle at the icon points of the phone path (19%, 52%, 85%) */
+    .trail{aspect-ratio:400/1000;margin:0 -8px}
+    .trail-svg{display:none}
+    .trail-msvg{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+    .trail .trail-msvg .track,.trail .trail-msvg .ink{stroke-width:5}
+    .trail .trail-msvg .start,.trail .trail-msvg .head{stroke-width:2}
+    .svc{width:100%;grid-template-columns:1fr 64px 1fr;left:50%!important}
+    .svc[data-y="230"]{top:19%!important}
+    .svc[data-y="700"]{top:52%!important}
+    .svc[data-y="1150"]{top:85%!important}
+    .svc h3{font-size:clamp(26px,8vw,34px)}
+    .svc .l{padding-right:8px}
+    .svc .r{padding-left:8px}
+    .svc .icon{width:64px;height:64px;background:var(--cream);border-radius:50%}
+    .svc .icon svg{width:54px;height:54px}
+    .svc .bubble{top:calc(50% + 30px);right:calc(50% + 2px);width:min(176px,47%);padding:8px 11px 7px;border-radius:13px}
+    .svc[data-bubble="right"] .bubble{right:auto;left:calc(50% + 2px)}
+    .svc .bubble,.svc .bubble a,.svc .bubble .note{font-size:11px}
+    .svc .bubble a{margin-top:5px;white-space:nowrap}
+    .foot-band{margin-left:0;margin-right:0}
+    .foot-info{grid-template-columns:1fr;gap:26px}
+    .foot-info>div:nth-child(n){justify-self:start}
+    .foot-h,.foot-cta{margin-left:0}
+
+    /* ===== MOBILE PASS (phones only) ===== */
+    /* 1. hero tags: small one-liners. Lines get a 4vw gap; tag 1 sits left of LINKEDIN,
+          tag 2 sits on top of the right end of STRATEGY &, tag 3 mirrors it on top of the left end of DESIGN.
+          Each word box hugs its letters (line 2 ~62vw wide, so 19vw spare on each side) */
+    .headline .line>b{display:inline-block}
+    .headline .line+.line{margin-top:4vw}
+    .tag.at-left,.tag.at-right{position:absolute;display:inline-block;top:50%;translate:0 -50%;margin:0;font-size:9px;padding:.5em .95em;line-height:1.2}
+    .tag.t1{left:auto;right:100%;margin-right:-12px}
+    .tag.t2{left:auto;right:calc(8px - 19vw);top:4%}
+    .tag.t3{left:auto;right:100%;top:4%;margin-right:calc(8.75vw - 109px)} /* mirror of tag 2: ~10px from the left screen edge, riding the top of DESIGN */
+    .hero-cta{margin-top:36px}
+    /* swirls sit beside the button, one at each edge (headline starts 130px into the hero
+       and is 46.7vw tall; the 44px button starts 36px below it) */
+    .loop{width:64px;top:calc(189px + 46.7vw)} /* headline now starts 156px into the hero */
+    /* 3. readable small text: labels, card copy, roles */
+    .about .label,.work-head .label,.faq-head .label,.recs-head .label,.me-copy .label{font-size:12.5px}
+    .tc-who small{font-size:12.5px}
+    .foot-info h4{font-size:12.5px}
+    /* 2. tap targets at least 44px tall */
+    .wordmark{font-size:17px;padding:12px 0}
+    .navr{gap:8px}
+    nav .talk{padding:6px 6px 6px 16px;font-size:13px;gap:10px}
+    nav .talk i{width:32px;height:32px}
+    .hero-cta .talk{padding:6px 6px 6px 20px;font-size:14.5px}
+    .hero-cta .talk i{width:32px;height:32px}
+    .work-head .talk,.recs-head .talk{padding:6px 6px 6px 18px;font-size:13.5px}
+    .work-head .talk i,.recs-head .talk i{width:32px;height:32px}
+    .foot-info>div{gap:0}
+    .foot-info a,.foot-info span{display:inline-flex;align-items:center;min-height:44px}
+    /* 4. tighter vertical rhythm */
+    .about{padding:92px 0 72px} /* a little more room below the hero */
+    /* The Short Version: smaller tags. "Canva is my playground" sits at the left above the
+       label, the text comes straight under the label, "Strategy nerd, too" sits at the right below it */
+    .about .wrap{display:flex;flex-direction:column}
+    .about-body{display:contents}
+    .about .label{margin-bottom:14px}
+    .about-tag{font-size:9px;padding:5px 10px}
+    .about-tag.ta{order:-1;align-self:flex-start;margin:0 0 18px 4px}
+    .about-tag.tb{align-self:flex-end;margin:6px 4px 0 0}
+    /* Selected Work: a little more room between the headline and the Behance button */
+    .work .work-head .talk{margin-top:10px}
+    .work{padding:24px 0 40px}
+    .services{padding:40px 0 32px}
+    .svc-head{margin-bottom:28px}
+    .stats-band{padding:40px 0;margin-bottom:24px}
+    .faq{padding:56px 0 64px}
+    .faq-head{margin-bottom:28px}
+    .me{padding:56px 0}
+    .me-grid{gap:28px}
+    .recs{padding:56px 0 48px}
+    .recs-head{margin-bottom:28px}
+    footer{padding:64px 0 28px}
+    .foot-info{margin-top:56px}
+    .foot-base{margin-top:40px}
+    /* jump links land below the fixed header */
+    #work,#services,#faq,#about-me,#recommendations{scroll-margin-top:48px}
+    /* section order on phones: About me comes before the FAQ (the page is a column;
+       everything keeps its place except those two, which swap) */
+    body{display:flex;flex-direction:column}
+    #faq{order:1}
+    #recommendations{order:2}
+    body>footer{order:3}
+    /* 6. stats as a 2 x 2 grid */
+    .stats{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;row-gap:28px}
+    .stat big{font-size:44px}
+    .stat p{font-size:13px}
+    /* 8. narrower side fades so more of each testimonial shows */
+    .marquee::before,.marquee::after{width:8%}
+    /* 9. compact menu */
+    .mburger{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:44px;height:44px;border-radius:50%;border:0;background:var(--white);cursor:pointer;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+    .mburger span{display:block;width:18px;height:2px;border-radius:2px;background:var(--ink);transition:transform .25s}
+    .mburger[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+    .mburger[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+    .mmenu{display:flex;flex-direction:column;position:fixed;top:72px;left:12px;right:12px;z-index:70;pointer-events:auto;background:var(--white);border-radius:22px;padding:10px;box-shadow:0 20px 50px rgba(20,18,16,.18)}
+    .mmenu[hidden]{display:none}
+    .mmenu a{padding:13px 16px;border-radius:14px;font-family:"Bricolage Grotesque",sans-serif;font-variation-settings:"wdth" 82;font-weight:700;font-size:22px}
+    .mmenu a:hover,.mmenu a:focus-visible{background:var(--blush)}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.loop path{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="navl"><a class="pill" href="#work">Work</a><a class="pill" href="#about-me">About me</a></div>
+    <a class="wordmark" href="#top">That Canva Girl</a>
+    <div class="navr">
+      <span class="hours">New posts Mon-Fri<br>6:30am EAT</span>
+      <a class="talk" href="https://nestuge.com/linkedin-strategy-calls" target="_blank" rel="noopener">Book a call <i>↗</i></a>
+      <button class="mburger" id="mburger" type="button" aria-expanded="false" aria-controls="mmenu" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="#work">Work</a><a href="#about-me">About me</a><a href="#faq">FAQ</a><a href="#recommendations">Testimonials</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="loop l1" viewBox="0 0 220 170" aria-hidden="true"><path d="M -6 120 C 50 122, 92 70, 132 52 C 176 32, 206 70, 180 104 C 156 134, 112 112, 124 78 C 136 44, 178 28, 214 30"/></svg>
+  <svg class="loop l2" viewBox="0 0 220 170" aria-hidden="true"><path d="M -6 120 C 50 122, 92 70, 132 52 C 176 32, 206 70, 180 104 C 156 134, 112 112, 124 78 C 136 44, 178 28, 214 30"/></svg>
+
+  <div class="hero-main">
+    <div class="hero-block">
+      <h1 class="headline display">
+        <span class="line"><b>LinkedIn<em class="tag at-left t1">That Canva Girl</em></b></span>
+        <span class="line"><b>Strategy &amp;<em class="tag at-right t2">#1 Branding on LinkedIn, Kenya</em></b></span>
+        <span class="line"><b>Design with me<em class="tag at-left t3">No boring banners</em></b></span>
+      </h1>
+      <div class="hero-cta">
+        <p>Based in Kenya, working with<br>people everywhere.</p>
+        <a class="talk" href="https://nestuge.com/linkedin-strategy-calls" target="_blank" rel="noopener">Book a strategy call <i>↗</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ribbon" aria-label="Get positioned. Get seen. Get paid. Strategy + design.">
+    <svg viewBox="0 0 1600 172" aria-hidden="true">
+      <path id="ribbonPath" class="band" d="M -120 140 A 5330 5330 0 0 1 1720 140"/>
+      <text class="ribbon-text" dy="0.34em"><textPath id="ribbonText" href="#ribbonPath" startOffset="0"></textPath></text>
+    </svg>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <p class="label">The short version</p>
+    <div class="about-body">
+      <span class="about-tag ta">Canva is my playground</span>
+      <p class="reveal" data-hot="half both halves">Most people only do half of LinkedIn. Great visuals with zero strategy, or solid strategy with a lunch-break brand. I do both halves, so you get followed, trusted and paid.</p>
+      <span class="about-tag tb">Strategy nerd, too</span>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="work-head">
+      <p class="label">Featured projects</p>
+      <h2 class="display">Selected work</h2>
+      <a class="talk" href="https://www.behance.net/gathogajazmine" target="_blank" rel="noopener">See it all on Behance <i>↗</i></a>
+    </div>
+  </div>
+  <!-- curved reel of every design from her Behance projects (built by script) -->
+  <div class="reel" id="reel" role="img" aria-label="A curved, scrolling reel of Jasmine's designs: portfolio slides, a company profile, social media posts, posters and a wedding website"></div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <!-- same row layout as Selected Work: small label left, headline centred -->
+    <div class="work-head svc-head">
+      <p class="label">My services</p>
+      <h2 class="display">This is my thing</h2>
+    </div>
+    <div class="trail" id="trail">
+      <svg class="trail-svg" viewBox="0 0 1200 1360" aria-hidden="true">
+        <path class="track" d="M 1000 40 C 870 60, 760 130, 760 230 C 760 330, 740 460, 790 500 C 850 545, 880 440, 800 420 C 690 395, 600 540, 470 590 C 410 610, 380 650, 380 700 C 380 810, 420 900, 520 940 C 640 990, 760 940, 800 1000 C 840 1060, 780 1120, 740 1080 C 690 1030, 760 970, 820 1020 C 870 1060, 820 1110, 800 1150 C 780 1230, 720 1300, 600 1330"/>
+        <path class="ink" id="trailPath" d="M 1000 40 C 870 60, 760 130, 760 230 C 760 330, 740 460, 790 500 C 850 545, 880 440, 800 420 C 690 395, 600 540, 470 590 C 410 610, 380 650, 380 700 C 380 810, 420 900, 520 940 C 640 990, 760 940, 800 1000 C 840 1060, 780 1120, 740 1080 C 690 1030, 760 970, 820 1020 C 870 1060, 820 1110, 800 1150 C 780 1230, 720 1300, 600 1330"/>
+        <circle class="start" id="trailStart" r="15"/>
+        <circle class="head" id="trailHead" r="10"/>
+      </svg>
+      <!-- phone version of the same trail: taller and narrower, icons stacked down the middle,
+           a swirl to the right after step 1 and to the left after step 2 (shown on phones only) -->
+      <svg class="trail-msvg" viewBox="0 0 400 1000" aria-hidden="true">
+        <path class="track" d="M 340 20 C 270 30, 200 90, 200 190 C 200 300, 240 405, 300 405 C 325 405, 345 385, 345 360 C 345 335, 325 315, 300 315 C 275 315, 255 335, 255 360 C 255 410, 200 440, 200 520 C 200 630, 160 735, 100 735 C 75 735, 55 715, 55 690 C 55 665, 75 645, 100 645 C 125 645, 145 665, 145 690 C 145 740, 200 770, 200 850 C 200 920, 260 965, 330 985"/>
+        <path class="ink" id="trailMPath" d="M 340 20 C 270 30, 200 90, 200 190 C 200 300, 240 405, 300 405 C 325 405, 345 385, 345 360 C 345 335, 325 315, 300 315 C 275 315, 255 335, 255 360 C 255 410, 200 440, 200 520 C 200 630, 160 735, 100 735 C 75 735, 55 715, 55 690 C 55 665, 75 645, 100 645 C 125 645, 145 665, 145 690 C 145 740, 200 770, 200 850 C 200 920, 260 965, 330 985"/>
+        <circle class="start" id="trailMStart" r="8"/>
+        <circle class="head" id="trailMHead" r="6"/>
+      </svg>
+
+      <div class="svc" data-x="760" data-y="230" data-bubble="left">
+        <h3 class="display l">LinkedIn</h3>
+        <span class="icon"><svg viewBox="0 0 100 100"><g class="sp"><path d="M22 18 l6 9 M50 6 v10 M84 22 l-7 7 M14 62 l9 -3 M82 78 l-8 -5"/></g><circle cx="48" cy="54" r="28" fill="var(--orange)"/><circle cx="48" cy="54" r="15" fill="var(--cream)"/><circle cx="48" cy="54" r="4" fill="var(--ink)" stroke="none"/><path d="M48 54 L80 24 M80 24 l-11 1 M80 24 l-1 11 M74 22 l4 -6 M82 30 l6 -4"/></svg></span>
+        <h3 class="display r">Strategy</h3>
+        <div class="bubble"><p>A 1-on-1 call on how to grow, position yourself and attract clients on LinkedIn.</p><a href="https://nestuge.com/linkedin-strategy-calls" target="_blank" rel="noopener">Book a strategy call →</a></div>
+      </div>
+
+      <div class="svc" data-x="380" data-y="700" data-bubble="right">
+        <h3 class="display l">Profile</h3>
+        <span class="icon"><svg viewBox="0 0 100 100"><g class="sp"><path d="M20 20 l7 8 M52 8 v10 M86 30 l-9 4 M16 70 l9 -2"/></g><g transform="rotate(40 50 50)"><rect x="40" y="14" width="20" height="56" rx="3" fill="var(--orange)"/><rect x="40" y="14" width="20" height="10" rx="3" fill="var(--cream)"/><path d="M40 70 L50 88 L60 70 Z" fill="var(--cream)"/><path d="M46 81 L50 88 L54 81 Z" fill="var(--ink)" stroke="none"/></g></svg></span>
+        <h3 class="display r">Design</h3>
+        <div class="bubble"><p>Profiles, banners, carousels and flyers, built in Canva to convert, not just look cute.</p><span class="note">100+ profiles designed</span></div>
+      </div>
+
+      <div class="svc" data-x="800" data-y="1150" data-bubble="left">
+        <h3 class="display l">Weekday</h3>
+        <!-- calendar: five filled weekdays, two empty weekend days -->
+        <span class="icon"><svg viewBox="0 0 100 100"><g class="sp"><path d="M12 22 l8 6 M50 4 v10 M88 22 l-8 6 M90 74 l-9 -3"/></g><rect x="14" y="24" width="72" height="62" rx="8" fill="var(--cream)"/><path d="M14 32 a8 8 0 0 1 8 -8 h56 a8 8 0 0 1 8 8 v10 h-72 z" fill="var(--orange)"/><path d="M34 16 v14 M66 16 v14"/><rect x="22" y="52" width="9" height="9" rx="2" fill="var(--orange)"/><rect x="34" y="52" width="9" height="9" rx="2" fill="var(--orange)"/><rect x="46" y="52" width="9" height="9" rx="2" fill="var(--orange)"/><rect x="58" y="52" width="9" height="9" rx="2" fill="var(--orange)"/><rect x="70" y="52" width="9" height="9" rx="2" fill="var(--orange)"/><rect x="22" y="68" width="9" height="9" rx="2"/><rect x="34" y="68" width="9" height="9" rx="2"/><path d="M50 72 l4 4 8 -9"/></svg></span>
+        <h3 class="display r">Content</h3>
+        <div class="bubble"><p>Free strategy and design tips, plus lots of fun stories.</p><span class="note">6:30am EAT, Monday to Friday</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-band" aria-label="Results">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><big class="display">#1</big><p>Branding &amp; Positioning on LinkedIn Kenya</p></div>
+      <div class="stat"><big class="display">#40</big><p>Branding &amp; Positioning on LinkedIn worldwide</p></div>
+      <div class="stat"><big class="display">100+</big><p>LinkedIn profiles designed for creators, founders &amp; more.</p></div>
+      <div class="stat"><big class="display">99%</big><p>Client satisfaction, with 55% of new work from referrals.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="faq-head">
+      <p class="label">Frequently asked questions</p>
+      <h2 class="display">Things you<br>might ask</h2>
+    </div>
+    <!-- accordion: one answer open at a time; the + turns to × when open -->
+    <div class="acc" id="acc">
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false"><span class="acc-t">Do I need strategy or design?</span><span class="acc-i" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 1V15M1 8H15"/></svg></span></button>
+        <div class="acc-a"><div><p>Usually both. Great visuals with no positioning don’t get seen, and a solid strategy with a thrown-together brand doesn’t get trusted. A strategy call is the best place to start; we’ll work out what’s missing.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false"><span class="acc-t">What do I get with a profile makeover?</span><span class="acc-i" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 1V15M1 8H15"/></svg></span></button>
+        <div class="acc-a"><div><p>Your LinkedIn profile optimised and designed: banner, featured section, carousels and flyers, all built in Canva so you can keep using them.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false"><span class="acc-t">Why Canva?</span><span class="acc-i" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 1V15M1 8H15"/></svg></span></button>
+        <div class="acc-a"><div><p>Because you can edit it yourself afterwards. Canva has always been my playground, and Figma comes out when a project needs it.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false"><span class="acc-t">Do you work with people outside Kenya?</span><span class="acc-i" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 1V15M1 8H15"/></svg></span></button>
+        <div class="acc-a"><div><p>Yes. I’m based in Kenya and work with consultants, founders and creators wherever they are.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false"><span class="acc-t">Not ready to hire anyone yet?</span><span class="acc-i" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 1V15M1 8H15"/></svg></span></button>
+        <div class="acc-a"><div><p>Follow along on LinkedIn. I share free strategy and design tips every weekday at 6:30am EAT.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false"><span class="acc-t">How do I get started?</span><span class="acc-i" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 1V15M1 8H15"/></svg></span></button>
+        <div class="acc-a"><div><p><a href="https://nestuge.com/linkedin-strategy-calls" target="_blank" rel="noopener">Book a strategy call</a>, or DM me “STRATEGY” on LinkedIn. Ask me anything, anytime.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About me: photo on a hand-drawn doodle background (left), story (right) -->
+<section class="me" id="about-me">
+  <div class="wrap me-grid">
+    <div class="me-art">
+      <svg viewBox="0 0 600 640" aria-hidden="true">
+        <!-- soft blush blob behind the photo -->
+        <path class="me-blob" d="M128 96 C 230 34, 420 40, 498 128 C 576 216, 560 380, 520 470 C 476 568, 330 610, 214 582 C 98 554, 40 452, 46 330 C 52 214, 66 132, 128 96 Z"/>
+        <!-- big loopy swirl, same hand as the hero swirls -->
+        <path class="me-ink-o" d="M 22 210 C 40 120, 120 60, 190 70 C 250 78, 262 150, 214 162 C 168 174, 160 108, 214 84 C 300 46, 420 40, 470 70"/>
+        <path class="me-ink-o" d="M 560 420 C 590 500, 560 590, 470 612 C 400 628, 380 570, 424 556 C 470 542, 486 600, 440 626 C 380 660, 300 640, 262 616"/>
+        <!-- sparkles -->
+        <path class="me-fill-o" d="M 548 150 l 10 26 l 26 10 l -26 10 l -10 26 l -10 -26 l -26 -10 l 26 -10 Z"/>
+        <path class="me-fill-o" d="M 64 470 l 7 17 l 17 7 l -17 7 l -7 17 l -7 -17 l -17 -7 l 17 -7 Z"/>
+        <path class="me-ink" d="M 586 228 l 0 14 M 579 235 l 14 0"/>
+        <!-- zigzag + dotted arc + little dots, in ink -->
+        <path class="me-ink" d="M 36 560 l 18 -16 l 18 16 l 18 -16 l 18 16 l 18 -16"/>
+        <path class="me-ink me-dash" d="M 520 300 C 580 320, 590 380, 560 410"/>
+        <circle class="me-fill-k" cx="96" cy="388" r="6"/>
+        <circle class="me-fill-o" cx="540" cy="520" r="9"/>
+        <circle class="me-fill-k" cx="470" cy="38" r="5"/>
+      </svg>
+      <img src="assets/jasmine-stage.webp" width="800" height="1000" alt="Jasmine Gathoga speaking on stage with a microphone, in a Canva cap and Canva Community Labs lanyard, with LinkedIn post stats behind her" loading="lazy">
+      <span class="me-tag me-tag-l">Hi, I am Jazz</span>
+      <span class="me-tag me-tag-r">Kenya</span>
+    </div>
+    <div class="me-copy">
+      <p class="label">About me</p>
+      <h2 class="display">Most people<br>know me as<br><em>That Canva Girl</em></h2>
+      <p>Canva has always been my playground. But somewhere between working on 100+ profiles I realised the ones growing and getting clients weren’t always the ones with the best designs. They were the ones who understood the game.</p>
+      <p>So I learned that too: positioning, engagement, content, all of it. Now I help consultants and service providers get strategically and visually positioned.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LinkedIn recommendations marquee. Cards are listed once here; the script clones the set so the
+     loop is seamless. To add one, copy an <a class="tcard"> block. Each card shows the key line from her
+     LinkedIn recommendation, word for word. -->
+<section class="recs" id="recommendations">
+  <div class="wrap recs-head">
+    <p class="label">Testimonials</p>
+    <h2 class="display">Apparently,<br>it works</h2>
+    <p class="recs-sub">What clients wrote about working with Jasmine, straight from her LinkedIn recommendations.</p>
+    <a class="talk" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">Read them all on LinkedIn <i>↗</i></a>
+  </div>
+  <div class="marquee" id="marquee">
+    <div class="marquee-set">
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">EK</span><div><b>Esther Kaingi</b><small>Procurement &amp; Supply Chain Specialist</small></div></div>
+        <p>“Now, my profile clearly positions me and communicates what I do.”</p>
+      </a>
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">RA</span><div><b>Richel Ohenewaa Attafuah</b><small>Machine Learning Engineer</small></div></div>
+        <p>“What makes her stand out is not just her creativity but her strategy.”</p>
+      </a>
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">IO</span><div><b>Ishioma Olise</b><small>Executive Assistant to Founders &amp; C-Suite</small></div></div>
+        <p>“When Jasmine sent me the final files, I actually cried.”</p>
+      </a>
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">FS</span><div><b>Famata Dija Sanyang</b><small>AI Safety &amp; Governance Research</small></div></div>
+        <p>“She has that rare blend of artistic vision and practical precision - the kind that doesn’t just make a design look good, but makes it work.”</p>
+      </a>
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">IC</span><div><b>Ifediora Chisom</b><small>Brand strategy &amp; business writing</small></div></div>
+        <p>“Jasmine’s hands are blessed. Her creativity is out of this world.”</p>
+      </a>
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">EN</span><div><b>Esther Chinonso Nwabueze</b><small>Content &amp; Technical Writer</small></div></div>
+        <p>“Everyone truly needs a Jasmine in their corner.”</p>
+      </a>
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">JA</span><div><b>Jennifer Aburimen</b><small>Executive Virtual Assistant</small></div></div>
+        <p>“It wasn’t just the final look (which turned out amazing), it was the way she worked.”</p>
+      </a>
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">OM</span><div><b>Osagie Mary Doo</b><small>AI Strategist</small></div></div>
+        <p>“Talk about a designer who knows her onions? Jasmine!”</p>
+      </a>
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">VA</span><div><b>Vida Amoh</b><small>LinkedIn Account Manager</small></div></div>
+        <p>“I was instantly inspired by her creativity and professionalism.”</p>
+      </a>
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">EP</span><div><b>Ekemini Peter</b><small>Designer</small></div></div>
+        <p>“She’s not just good, her brand is top-tier in canva design coaching.”</p>
+      </a>
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">OO</span><div><b>Obianuju Miriam Okeke</b><small>Social Media Manager</small></div></div>
+        <p>“There are designers and there are designerrrrssss. Jasmine is that designer you just never see coming.”</p>
+      </a>
+      <a class="tcard" href="https://www.linkedin.com/in/jasminegathoga/details/recommendations/" target="_blank" rel="noopener">
+        <div class="tc-who"><span class="tc-ini">PN</span><div><b>Perfect Nkani</b><small>LinkedIn client</small></div></div>
+        <p>“She transformed my brand image into one that positioned me as an authority and gets results.”</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2 class="display foot-h">Okay, that's<br><em>enough<br>scrolling</em></h2>
+    <div class="foot-cta">
+      <a class="fbtn fbtn-main" href="https://nestuge.com/linkedin-strategy-calls" target="_blank" rel="noopener">Book a call <i>↗</i></a>
+      <a class="fbtn fbtn-alt" href="https://www.linkedin.com/in/jasminegathoga" target="_blank" rel="noopener">or DM “STRATEGY” on LinkedIn</a>
+    </div>
+    <div class="foot-info foot-band">
+      <div><h4>Email</h4><a href="mailto:jasminegathogadesigns@gmail.com">jasminegathogadesigns@gmail.com</a></div>
+      <div><h4>Find me</h4><a href="https://www.linkedin.com/in/jasminegathoga" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.behance.net/gathogajazmine" target="_blank" rel="noopener">Behance</a></div>
+      <div><h4>Free tips</h4><span>Every weekday, 6:30am EAT</span></div>
+    </div>
+    <div class="foot-base foot-band"><span>© 2026 Jasmine Gathoga · That Canva Girl</span><span>Made in Canva's spirit, coded by hand</span></div>
+  </div>
+</footer>
+
+<script>
+  // curved ribbon marquee: text scrolls along the path, looping seamlessly
+  (function(){
+    const tp = document.getElementById('ribbonText');
+    const unit = 'Get positioned • Get seen • Get paid • Strategy + design • ';
+    tp.textContent = unit;
+    let unitLen = 0, offset = 0, last = performance.now();
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function measure(){
+      tp.textContent = unit;
+      unitLen = tp.getComputedTextLength() || 1;
+      const pathLen = document.getElementById('ribbonPath').getTotalLength();
+      tp.textContent = unit.repeat(Math.ceil(pathLen / unitLen) + 2);
+    }
+    function step(now){
+      const dt = Math.min(64, now - last); last = now;
+      offset -= dt * 0.06;               // ~60 svg units per second
+      if (offset <= -unitLen) offset += unitLen;
+      tp.setAttribute('startOffset', offset);
+      requestAnimationFrame(step);
+    }
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
+      measure();
+      if (!reduce) requestAnimationFrame(step);
+    });
+  })();
+
+  // word-by-word colour reveal on scroll
+  const rv = document.querySelector('.reveal');
+  const hot = (rv.dataset.hot || '').toLowerCase().split(' ');
+  rv.innerHTML = rv.textContent.split(' ').map(w => {
+    const k = w.toLowerCase().replace(/[^a-z.]/g,'');
+    return `<span class="w${hot.includes(k)||hot.includes(k.replace('.',''))?' hot-word':''}">${w}</span>`;
+  }).join(' ');
+  const words = [...rv.querySelectorAll('.w')];
+  function revealTick(){
+    const r = rv.getBoundingClientRect(), vh = innerHeight;
+    const p = Math.min(1, Math.max(0, (vh*0.85 - r.top) / (r.height + vh*0.35)));
+    const n = Math.round(p * words.length);
+    words.forEach((w,i) => {
+      const on = i < n;
+      w.classList.toggle('on', on && !w.classList.contains('hot-word'));
+      w.classList.toggle('hot', on && w.classList.contains('hot-word'));
+    });
+  }
+
+  // services trail: line draws to follow the scroll, a dot rides the tip,
+  // and each service pops on as the line reaches it
+  const trail = document.getElementById('trail');
+  const tPath = document.getElementById('trailPath');
+  const tHead = document.getElementById('trailHead');
+  const tStart = document.getElementById('trailStart');
+  const VB_W = 1200, VB_H = 1360;
+  const L = tPath.getTotalLength();
+  tPath.style.strokeDasharray = L;
+  tPath.style.strokeDashoffset = L;
+  const p0 = tPath.getPointAtLength(0);
+  tStart.setAttribute('cx', p0.x); tStart.setAttribute('cy', p0.y);
+
+  // sample the path: running max of y lets loops draw through as you pass them
+  const lens = [], maxYs = [], pts = [];
+  for (let s = 0, m = -Infinity; s <= L; s += 3) {
+    const p = tPath.getPointAtLength(s);
+    m = Math.max(m, p.y); lens.push(s); maxYs.push(m); pts.push(p);
+  }
+  const svcs = [...trail.querySelectorAll('.svc')].map(el => {
+    const x = +el.dataset.x, y = +el.dataset.y;
+    el.style.left = (x / VB_W * 100) + '%';
+    el.style.top = (y / VB_H * 100) + '%';
+    let best = 0, bd = Infinity;
+    pts.forEach((p, i) => { const d = (p.x - x) ** 2 + (p.y - y) ** 2; if (d < bd) { bd = d; best = i; } });
+    return { el, at: lens[best] };
+  });
+
+  const mobileQ = matchMedia('(max-width:640px)');
+  const mLine = document.createElement('div'), mInk = document.createElement('i'), mDot = document.createElement('b');
+  mLine.className = 'trail-mline'; mLine.setAttribute('aria-hidden', 'true'); mLine.append(mInk, mDot); trail.appendChild(mLine);
+  let drawn = 0, goal = 0;
+  function roadTick(){
+    const r = trail.getBoundingClientRect();
+    const ty = (innerHeight * 0.62 - r.top) / (r.width / VB_W);
+    let lo = 0, hi = maxYs.length - 1, idx = -1;
+    while (lo <= hi) { const mid = (lo + hi) >> 1; if (maxYs[mid] <= ty) { idx = mid; lo = mid + 1; } else hi = mid - 1; }
+    goal = idx < 0 ? 0 : lens[idx];
+  }
+  // phone trail: set up the first time a phone frame runs (desktop never touches it).
+  // Same behaviour as desktop: the line follows the scroll, a dot rides its tip, and each
+  // step pops on when the line reaches its icon (with the same hysteresis)
+  let pt = null;
+  function phoneTrail(){
+    if (!pt) {
+      const path = document.getElementById('trailMPath'), W = 400;
+      const len = path.getTotalLength();
+      path.style.strokeDasharray = len; path.style.strokeDashoffset = len;
+      const s0 = path.getPointAtLength(0), st = document.getElementById('trailMStart');
+      st.setAttribute('cx', s0.x); st.setAttribute('cy', s0.y);
+      const ls = [], ys = [], ps = [];
+      for (let s = 0, m = -Infinity; s <= len; s += 1.5) { const p = path.getPointAtLength(s); m = Math.max(m, p.y); ls.push(s); ys.push(m); ps.push(p); }
+      // icon centres on the phone path, in the same order as the steps
+      const at = [[200, 190], [200, 520], [200, 850]].map(([x, y]) => {
+        let best = 0, bd = Infinity;
+        ps.forEach((p, i) => { const d = (p.x - x) ** 2 + (p.y - y) ** 2; if (d < bd) { bd = d; best = i; } });
+        return ls[best];
+      });
+      pt = { path, len, W, ls, ys, at, head: document.getElementById('trailMHead'), drawn: 0 };
+    }
+    const r = trail.getBoundingClientRect();
+    const ty = (innerHeight * 0.62 - r.top) / (r.width / pt.W);
+    let lo = 0, hi = pt.ys.length - 1, idx = -1;
+    while (lo <= hi) { const mid = (lo + hi) >> 1; if (pt.ys[mid] <= ty) { idx = mid; lo = mid + 1; } else hi = mid - 1; }
+    const want = idx < 0 ? 0 : pt.ls[idx];
+    pt.drawn += (want - pt.drawn) * 0.14;
+    if (Math.abs(want - pt.drawn) < 0.3) pt.drawn = want;
+    pt.path.style.strokeDashoffset = pt.len - pt.drawn;
+    const h = pt.path.getPointAtLength(pt.drawn);
+    pt.head.setAttribute('cx', h.x); pt.head.setAttribute('cy', h.y);
+    pt.head.style.opacity = pt.drawn > 2 && pt.drawn < pt.len - 2 ? 1 : 0;
+    svcs.forEach((s, i) => {
+      const on = s.el.classList.contains('on');
+      if (!on && pt.drawn >= pt.at[i] - 1) s.el.classList.add('on');
+      else if (on && pt.drawn < pt.at[i] - 30) s.el.classList.remove('on');
+    });
+  }
+  (function frame(){
+    if (mobileQ.matches) {
+      // phones: the same scroll-drawn trail as desktop, on the phone path (#trailMPath)
+      phoneTrail();
+    } else {
+      drawn += (goal - drawn) * 0.14;
+      if (Math.abs(goal - drawn) < 0.5) drawn = goal;
+      tPath.style.strokeDashoffset = L - drawn;
+      const h = tPath.getPointAtLength(drawn);
+      tHead.setAttribute('cx', h.x); tHead.setAttribute('cy', h.y);
+      tHead.style.opacity = drawn > 4 && drawn < L - 4 ? 1 : 0;
+      // hysteresis: a step pops on when the line reaches it, and only switches off once the
+      // line has pulled clearly back above it - so it can't flicker off/on (re-popping) at the edge
+      svcs.forEach(s => {
+        const on = s.el.classList.contains('on');
+        if (!on && drawn >= s.at - 2) s.el.classList.add('on');
+        else if (on && drawn < s.at - 80) s.el.classList.remove('on');
+      });
+    }
+    requestAnimationFrame(frame);
+  })();
+
+  const nav = document.querySelector('nav');
+  const navTick = () => nav.classList.toggle('scrolled', scrollY > innerHeight * 0.8);
+  addEventListener('scroll', () => { revealTick(); roadTick(); navTick(); }, {passive:true});
+  revealTick(); roadTick(); navTick();
+
+  // curved work reel: a vanilla port of the "tilted grid hero" component.
+  // One row of tiles orbits the inside of a cylinder; the centre faces you flat,
+  // the ends curl toward you and fade out. Each tile is SLICES strips (facets),
+  // and one rotateY animation per tile carries it along the arc. A tile is handed
+  // its next design each time it wraps, out of sight, so every design plays through.
+  (function(){
+    const host = document.getElementById('reel');
+    // max_632 = Behance's 632px-tall size: sharp on retina at tile size, light enough for 3D compositing
+    const CDN = 'https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/';
+    const P = { // design files per Behance project
+      portfolio: ['2fde89189926025.65ba411f13c8e','481354189926025.65ba411f11aa4','2b7898189926025.65ba411f15a53','6fb935189926025.65ba411f0dabd','2c4e94189926025.65ba411f12cf4','f88996189926025.65ba411f058fc','16db84189926025.65b289058331d','41415e189926025.65ba411f0eb5b','e5515c189926025.65ba411f1b814','88c67a189926025.65ba411f0cabb','3e0829189926025.65ba411f1a844','449477189926025.65ba411f09647','3b0c72189926025.65ba411f16ab9','a72877189926025.65ba411f0a770','6373f7189926025.65ba411f0ba1c','9b6de7189926025.65ba411f086ae','cf48bc189926025.65ba411f18888','c470dc189926025.65ba411f19a68','26d495189926025.65ba411f1787a','8b1ee6189926025.65ba411f1c7d0','5b7c7d189926025.65ba411f14aa0','bda556189926025.65ba411f10b62'],
+      profile:   ['187f49187832055.659167f6e7ea7','837f49187832055.659167f6e8d90','6e6ca9187832055.659167f6e56eb','cf3726187832055.659167f666529','a26852187832055.659167f665609','89e727187832055.659167f6e6c6f'],
+      social:    ['946f59187828975.6591522e996f3','2ad3fd187828975.6591522d6e186','8ef42b187828975.6591522d6d2d4','adcf7e187828975.6591522e2fb75','9ba7ed187828975.6591522e30bae','0bff23187828975.6591522e2eb41'],
+      posters:   ['3e322f187828837.6591513291626','3c796c187828837.65915131390ef','8f88be187828837.65915131380f2','028f91187828837.6591513139e9f','5d0b15187828837.65915132367b9','ba83ae187828837.65915132374c0'],
+      wedding:   ['2725a3187827681.6591501fe5a45','3990b5187827681.6591501c1ae17','e171cb187827681.6591501c1bd16','c2d3bd187827681.6591501d67c31','df52cd187827681.6591501f7cabb','9a7255187827681.6591501f7ac4c','d6d336187827681.6591501f7bb5f'],
+    };
+    // interleave the projects so neighbouring tiles come from different projects
+    const lists = Object.values(P), IMAGES = [];
+    for (let i = 0; IMAGES.length < lists.reduce((n, l) => n + l.length, 0); i++)
+      lists.forEach(l => { if (l[i]) IMAGES.push(CDN + l[i] + '.png'); });
+
+    const OPT = { speed:4, tileHeight:34, aspect:4/3, gap:6, axis:50, curve:80, fade:12 };
+    const SLICES = 16, CAMERA = 1.6, MAX_WIDTH = 55;
+    const bend = Math.min(85, Math.max(5, OPT.curve)) * Math.PI / 180;
+    const arc = b => (CAMERA - 1 + Math.cos(b)) / (2 * CAMERA * Math.sin(b));
+    const r4 = n => +n.toFixed(4);
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function measure(width, height){
+      const { tileHeight, aspect, gap } = OPT;
+      const h = Math.min(tileHeight / 100 * height, MAX_WIDTH / 100 * width / aspect);
+      const radius = width * arc(bend);
+      if (!(h > 0) || !(radius > 0)) return null;
+      const deg = rad => rad * 180 / Math.PI;
+      const unit = deg(h / radius);
+      const pitch = (aspect + gap / 100) * unit;
+      const limit = deg(bend) + aspect * unit / 2;
+      const columns = Math.min(60, Math.max(2, Math.ceil(2 * limit / pitch)));
+      const sweep = r4(columns * pitch / 2);
+      return { columns, sweep, unit: r4(unit), limit: r4(Math.min(sweep, limit)) };
+    }
+
+    // preload every design: a tile picks up its next one just before it comes back into view
+    IMAGES.forEach(src => { const i = new Image(); i.referrerPolicy = 'no-referrer'; i.src = src; });
+
+    const style = document.createElement('style');
+    const band = document.createElement('div');
+    band.className = 'reel-band';
+    host.append(style, band);
+
+    const { tileHeight, aspect, axis, fade, speed } = OPT;
+    const u = n => `calc(${r4(n)} * min(${tileHeight}cqh, ${r4(MAX_WIDTH / aspect)}cqw))`;
+    const R = 100 * arc(bend), radius = `${+R.toFixed(3)}cqw`;
+    const turn = d => `translateZ(${radius}) rotateY(${r4(d)}deg) translateZ(-${radius})`;
+    const mask = `linear-gradient(90deg,transparent,#000 ${fade}%,#000 ${100 - fade}%,transparent)`;
+    Object.assign(band.style, { perspective: `${+(R * CAMERA).toFixed(3)}cqw`, perspectiveOrigin: `50% ${axis}%`, maskImage: mask, webkitMaskImage: mask });
+
+    let layout = null;
+    function build(L){
+      layout = L;
+      const { columns, sweep, unit, limit } = L;
+      const hide = r4((sweep - limit) / (2 * sweep || 1) * 100);
+      const share = aspect / SLICES, duration = columns * speed;
+      // No preserve-3d: every strip is a direct child of the perspective band and runs its own
+      // orbit, offset by its place on the tile (turns about one axis simply add up). Without 3D
+      // depth-sorting, the browser paints strips in DOM order every frame, so the overlapping
+      // edges can't fight over which one is in front - that fight was the flickering line.
+      // All strips of a tile share one duration and delay, so they stay locked together.
+      const offs = Array.from({ length: SLICES }, (_, k) => (aspect / 2 - (k + .5) * share) * unit);
+      style.textContent = offs.map((o, k) =>
+        `@keyframes reelOrbit${k}{from{transform:${turn(o - sweep)}}to{transform:${turn(o + sweep)}}` +
+        `0%,${hide}%,${100 - hide}%,100%{visibility:hidden}` +
+        `${r4(hide + .001)}%,${r4(100 - hide - .001)}%{visibility:visible}}`).join('');
+      band.textContent = '';
+      for (let t = 0; t < columns; t++) {
+        const first = columns - 1 - t; // tiles numbered in the order they come on
+        const imgs = [];
+        let lead;
+        for (let k = 0; k < SLICES; k++) {
+          const s = document.createElement('div');
+          s.className = 'reel-strip' + (k === 0 ? ' s-first' : k === SLICES - 1 ? ' s-last' : '');
+          // 1px overlap on both sides so no seam can open between neighbouring facets
+          const padL = k > 0 ? 1 : 0, padR = k < SLICES - 1 ? 1 : 0;
+          Object.assign(s.style, {
+            left: `calc(50% - ${u(share / 2)} - ${padL}px)`,
+            top: `calc(${axis}% - ${u(.5)})`,
+            width: `calc(${u(share)} + ${padL + padR}px)`,
+            height: u(1),
+          });
+          // inline + important so the page-wide reduced-motion rule pauses the reel instead of collapsing it
+          s.style.setProperty('animation', `reelOrbit${k} ${duration}s linear ${-t * speed}s infinite`, 'important');
+          if (reduce) s.style.setProperty('animation-play-state', 'paused', 'important');
+          const img = document.createElement('img');
+          img.alt = ''; img.draggable = false; img.referrerPolicy = 'no-referrer'; img.decoding = 'async';
+          Object.assign(img.style, { left: `calc(${u(-k * share)} + ${padL}px)`, width: u(aspect), height: u(1) });
+          s.appendChild(img); imgs.push(img);
+          band.appendChild(s);
+          if (k === 0) lead = s;
+        }
+        const show = n => { const src = IMAGES[n % IMAGES.length]; imgs.forEach(i => { if (i.src !== src) i.src = src; }); };
+        show(first);
+        // the tile's first strip reports each lap; the swap happens while the tile is hidden
+        lead.addEventListener('animationiteration', e => {
+          if (e.target !== lead) return;
+          show(Math.round(e.elapsedTime / duration) * columns + first); // whole laps, missed events included
+        });
+      }
+      band.classList.add('ready');
+    }
+
+    new ResizeObserver(([entry]) => {
+      const L = measure(entry.contentRect.width, entry.contentRect.height);
+      if (!L) return;
+      if (layout && layout.columns === L.columns && layout.sweep === L.sweep && layout.unit === L.unit) return;
+      build(L);
+    }).observe(host);
+  })();
+
+  // phone menu: toggle, close on link tap, outside tap or Escape
+  (function(){
+    const btn = document.getElementById('mburger'), menu = document.getElementById('mmenu');
+    const set = open => { btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); menu.hidden = !open; };
+    btn.addEventListener('click', e => { e.stopPropagation(); set(menu.hidden); });
+    menu.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
+    document.addEventListener('click', e => { if (!menu.hidden && !menu.contains(e.target)) set(false); });
+    addEventListener('keydown', e => { if (e.key === 'Escape') set(false); });
+  })();
+
+  // testimonials marquee: clone the card set once (hidden from screen readers) for a seamless loop
+  (function(){
+    const m = document.getElementById('marquee'), set = m.querySelector('.marquee-set');
+    const copy = set.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.querySelectorAll('a').forEach(a => a.tabIndex = -1);
+    m.appendChild(copy);
+  })();
+  // FAQ accordion: one answer open at a time; clicking the open one closes it
+  const accItems = [...document.querySelectorAll('#acc .acc-item')];
+  accItems.forEach(item => item.querySelector('.acc-q').addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    accItems.forEach(o => { o.classList.remove('open'); o.querySelector('.acc-q').setAttribute('aria-expanded', 'false'); });
+    if (!wasOpen) { item.classList.add('open'); item.querySelector('.acc-q').setAttribute('aria-expanded', 'true'); }
+  }));
+</script>
+</body>
+</html>
